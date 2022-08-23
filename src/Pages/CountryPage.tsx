@@ -1,0 +1,39 @@
+import React from "react";
+import { Country } from "../Components/Countries/Country/Country";
+import { useParams } from "react-router-dom";
+import { useFetch } from "../hooks/useFetch";
+import { Text, Spinner } from "@chakra-ui/react";
+
+type countryReq = {
+  name: string;
+  nativeName: string;
+  capital: string;
+  population: number;
+  region: string;
+  subRegion: string;
+  topLevelDomain: string[];
+  currencies: { code: string; name: string; symbol: string }[];
+  languages: {
+    name: string;
+    nativeName: string;
+  }[];
+  flag: string;
+}[];
+
+export const CountryPage = () => {
+  const params = useParams();
+  const {
+    data: recievedCountry,
+    isLoading,
+    error,
+  } = useFetch<countryReq>(
+    `https://restcountries.com/v2/name/${params.countryId}`
+  );
+
+  if (error) {
+    return <Text color="red">{error}</Text>;
+  } else if (isLoading) {
+    return <Spinner size="lg" />;
+  }
+  return recievedCountry ? <Country country={recievedCountry[0]} /> : null;
+};
