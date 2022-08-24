@@ -17,3 +17,12 @@ Pet-project made with TypeScript, React Router V6, Chakra UI, and little bit of 
 # Country page view:
 
 <img width="1280" alt="Screenshot 2022-08-24 at 11 51 42" src="https://user-images.githubusercontent.com/59931735/186388434-5ca763b4-f473-4014-b3e6-b95c5f13a7ae.png">
+
+# Home Page. Light mode:
+
+ <img width="1280" alt="Screenshot 2022-08-24 at 15 49 50" src="https://user-images.githubusercontent.com/59931735/186435567-3da43c18-e069-4e6f-ac5a-f48178eef8e4.png">
+
+# Country Page. Light mode:
+
+<img width="1277" alt="Screenshot 2022-08-24 at 15 51 03" src="https://user-images.githubusercontent.com/59931735/186435839-7435fa4a-97c8-4453-9952-266690907ad3.png">
+
