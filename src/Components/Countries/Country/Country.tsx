@@ -6,6 +6,8 @@ import {
   Heading,
   VStack,
   Text,
+  chakra,
+  Badge,
 } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
@@ -24,45 +26,74 @@ type CountryProps = {
       nativeName: string;
     }[];
     flag: string;
+    borders: string[];
   };
 };
 
 export const Country = ({ country }: CountryProps) => {
   return (
     <Box>
-      <Button>
-        <Link to="/">Back</Link>
-      </Button>
-      <HStack>
-        <Image src={country.flag} alt="flag" />
-        <Box>
-          <Heading>{country.name}</Heading>
-          <HStack>
-            <VStack>
-              <Text>Native Name: {country.nativeName}</Text>
-              <Text>Population: {country.population}</Text>
-              <Text>Region: {country.region}</Text>
-              <Text>Sub Region: {country.subRegion}</Text>
-              <Text>Capital: {country.capital}</Text>
-            </VStack>
-            <VStack>
-              <Text>Top Level Domain: {country.topLevelDomain}</Text>
-              <Text>
-                Currencies:{" "}
-                {country.currencies.map((c) => (
-                  <Text>{c.name}</Text>
-                ))}
-              </Text>
-              <Text>
-                Languages:{" "}
-                {country.languages.map((l) => (
-                  <Text>{l.name}</Text>
-                ))}
-              </Text>
-            </VStack>
-          </HStack>
-        </Box>
-      </HStack>
+      <Box maxW="1100px" mx="auto">
+        <Button mb="40px">
+          <Link to="/">Back</Link>
+        </Button>
+        <HStack spacing="80px">
+          <Image w="500px" h="400px" src={country.flag} alt="flag" />
+          <Box>
+            <Heading py="30px">{country.name}</Heading>
+            <HStack alignItems="flex-start">
+              <VStack alignItems="flex-start">
+                <Text>
+                  <chakra.span fontWeight="600">Native Name: </chakra.span>
+                  {country.nativeName}
+                </Text>
+                <Text>
+                  <chakra.span fontWeight="600">Population: </chakra.span>
+                  {Intl.NumberFormat().format(country.population)}
+                </Text>
+                <Text>
+                  <chakra.span fontWeight="600">Region: </chakra.span>
+                  {country.region}
+                </Text>
+                <Text>
+                  <chakra.span fontWeight="600">Sub Region: </chakra.span>
+                  {country.subRegion}
+                </Text>
+                <Text>
+                  <chakra.span fontWeight="600">Capital: </chakra.span>
+                  {country.capital}
+                </Text>
+              </VStack>
+              <VStack alignItems="flex-start">
+                <Text>
+                  <chakra.span fontWeight="600">Level Domain: </chakra.span>Top
+                  {country.topLevelDomain}
+                </Text>
+                <Text>
+                  <chakra.span fontWeight="600">Currencies: </chakra.span>
+                  {country.currencies.map((c) => (
+                    <Text key={c.name}>{c.name}</Text>
+                  ))}
+                </Text>
+                <Text>
+                  <chakra.span fontWeight="600">Languages: </chakra.span>
+                  {country.languages.map((l) => (
+                    <Text key={l.name}>{l.name}</Text>
+                  ))}
+                </Text>
+              </VStack>
+            </HStack>
+            <Text mt="40px">
+              <chakra.span fontWeight="600">Border Countries:</chakra.span>
+              {country.borders.map((country) => (
+                <Badge mx="5px" key={country}>
+                  {country}
+                </Badge>
+              ))}
+            </Text>
+          </Box>
+        </HStack>
+      </Box>
     </Box>
   );
 };

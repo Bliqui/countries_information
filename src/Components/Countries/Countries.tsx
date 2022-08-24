@@ -1,4 +1,6 @@
 import { SimpleGrid, Spinner, Text, Flex } from "@chakra-ui/react";
+import { useContext, useEffect } from "react";
+import { CountriesContext } from "../../context/context";
 import { useFetch } from "../../hooks/useFetch";
 import { DataType } from "../DataType";
 import { CountryPreview } from "./CountryPreview/CountryPreview";
@@ -16,9 +18,25 @@ export const Countries = ({
     error,
   } = useFetch<DataType[]>("https://restcountries.com/v3.1/all");
 
+  const { state, dispatch } = useContext(CountriesContext);
+
+  const isRequestNeeded = () => {
+    if (state.countries.length === receivedCountries?.length) {
+      return state.countries;
+    }
+    dispatch({
+      type: "ADD_COUNTRIES",
+      payload: receivedCountries,
+    });
+  };
+
+  useEffect(() => {
+    isRequestNeeded();
+  }, [receivedCountries]);
+
   let sortedCountries =
-    receivedCountries &&
-    receivedCountries.filter((country) => {
+    state.countries &&
+    state.countries.filter((country) => {
       if (selectedOption === "") {
         return true;
       }
@@ -28,7 +46,7 @@ export const Countries = ({
   let filteredCountries =
     sortedCountries &&
     sortedCountries.filter(({ name }) => {
-      return name.common.includes(searchResult);
+      return name.common.toLowerCase().includes(searchResult.toLowerCase());
     });
 
   if (filteredCountries?.length === 0) {

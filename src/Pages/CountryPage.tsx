@@ -18,6 +18,7 @@ type countryReq = {
     nativeName: string;
   }[];
   flag: string;
+  borders: string[];
 }[];
 
 export const CountryPage = () => {
