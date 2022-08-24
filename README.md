@@ -1,6 +1,6 @@
 # Countries search application.
 
-Pet-project made with TypeScript, Chakra UI, and little bit of tests.
+Pet-project made with TypeScript, React Router V6, Chakra UI, and little bit of tests.
 
 # Home page:
 
