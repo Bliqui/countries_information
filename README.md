@@ -26,3 +26,18 @@ Pet-project made with TypeScript, React Router V6, Chakra UI, and little bit of 
 
 <img width="1277" alt="Screenshot 2022-08-24 at 15 51 03" src="https://user-images.githubusercontent.com/59931735/186435839-7435fa4a-97c8-4453-9952-266690907ad3.png">
 
+# Home Page. Mobile: 
+
+<img width="206" alt="Screenshot 2022-08-24 at 17 30 35" src="https://user-images.githubusercontent.com/59931735/186459940-974a06d0-8dce-4866-ba8e-973e66878fa6.png">
+
+# Country Page. Mobile: 
+
+<img width="206" alt="Screenshot 2022-08-24 at 17 32 01" src="https://user-images.githubusercontent.com/59931735/186460099-686b9aed-d4d4-45c9-a344-1a3f18626b10.png">
+
+# Country Page. Mobile. Light Mode: 
+
+<img width="207" alt="Screenshot 2022-08-24 at 17 34 10" src="https://user-images.githubusercontent.com/59931735/186460542-8488944a-a690-45cd-8adb-f26138b67676.png">
+
+# Country Page. Mobile. Light Mode: 
+
+<img width="207" alt="Screenshot 2022-08-24 at 17 34 56" src="https://user-images.githubusercontent.com/59931735/186460705-bb5c0d17-7599-49a7-bfbe-d6a195a1347b.png">
