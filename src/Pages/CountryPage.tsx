@@ -34,7 +34,7 @@ export const CountryPage = () => {
   if (error) {
     return <Text color="red">{error}</Text>;
   } else if (isLoading) {
-    return <Spinner size="lg" />;
+    return <Spinner position="absolute" left="50%" mt="20%" size="lg" />;
   }
   return recievedCountry ? <Country country={recievedCountry[0]} /> : null;
 };

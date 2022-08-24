@@ -9,7 +9,9 @@ import {
   chakra,
   Badge,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import { ArrowBackIcon } from "@chakra-ui/icons";
+import { LanguageServiceMode } from "typescript";
 
 type CountryProps = {
   country: {
@@ -31,17 +33,24 @@ type CountryProps = {
 };
 
 export const Country = ({ country }: CountryProps) => {
+  const navigate = useNavigate();
+  const navigateToHome = () => navigate("/");
   return (
-    <Box>
+    <Box pt="30px">
       <Box maxW="1100px" mx="auto">
-        <Button mb="40px">
-          <Link to="/">Back</Link>
+        <Button
+          aria-label="button to the main page"
+          mb="40px"
+          leftIcon={<ArrowBackIcon />}
+          onClick={navigateToHome}
+        >
+          Back
         </Button>
         <HStack spacing="80px">
           <Image w="500px" h="400px" src={country.flag} alt="flag" />
           <Box>
             <Heading py="30px">{country.name}</Heading>
-            <HStack alignItems="flex-start">
+            <HStack spacing="60px" alignItems="flex-start">
               <VStack alignItems="flex-start">
                 <Text>
                   <chakra.span fontWeight="600">Native Name: </chakra.span>
@@ -57,7 +66,7 @@ export const Country = ({ country }: CountryProps) => {
                 </Text>
                 <Text>
                   <chakra.span fontWeight="600">Sub Region: </chakra.span>
-                  {country.subRegion}
+                  {country.subRegion ? country.subRegion : "None"}
                 </Text>
                 <Text>
                   <chakra.span fontWeight="600">Capital: </chakra.span>
@@ -71,25 +80,39 @@ export const Country = ({ country }: CountryProps) => {
                 </Text>
                 <Text>
                   <chakra.span fontWeight="600">Currencies: </chakra.span>
-                  {country.currencies.map((c) => (
-                    <Text key={c.name}>{c.name}</Text>
+                  {country.currencies.map((cur, i) => (
+                    <chakra.span key={cur.name}>
+                      {country.currencies.length === i + 1
+                        ? cur.name
+                        : cur.name + ","}
+                    </chakra.span>
                   ))}
                 </Text>
                 <Text>
                   <chakra.span fontWeight="600">Languages: </chakra.span>
-                  {country.languages.map((l) => (
-                    <Text key={l.name}>{l.name}</Text>
+                  {country.languages.map((l, i) => (
+                    <chakra.span pr="5px" key={l.name}>
+                      {country.languages.length === i + 1
+                        ? l.name
+                        : l.name + ","}
+                    </chakra.span>
                   ))}
                 </Text>
               </VStack>
             </HStack>
             <Text mt="40px">
-              <chakra.span fontWeight="600">Border Countries:</chakra.span>
-              {country.borders.map((country) => (
-                <Badge mx="5px" key={country}>
-                  {country}
-                </Badge>
-              ))}
+              <chakra.span fontWeight="600">Border Countries: </chakra.span>
+              {country.borders ? (
+                country.borders.map((country) => {
+                  return (
+                    <Badge mx="5px" key={country}>
+                      {country}
+                    </Badge>
+                  );
+                })
+              ) : (
+                <chakra.span>None</chakra.span>
+              )}
             </Text>
           </Box>
         </HStack>

@@ -44,9 +44,9 @@ export const CountryPreview = ({
           capital={capital}
         />
       </Box>
-      <Button>
-        <Link to={`country/${title}`}>Details</Link>
-      </Button>
+      <Link to={`country/${title}`}>
+        <Button>Details</Button>
+      </Link>
     </VStack>
   );
 };
