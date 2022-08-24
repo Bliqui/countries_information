@@ -1,4 +1,4 @@
-import { VStack, Image, Box, Text, Button } from "@chakra-ui/react";
+import { VStack, Image, Box, Button } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 import { CountryDescription } from "./CountryDescription/CountryDescription";
 
@@ -19,7 +19,8 @@ export const CountryPreview = ({
 }: CountryProps) => {
   return (
     <VStack
-      bgColor="gray.700"
+      bgColor="gray.200"
+      _dark={{ bgColor: "gray.700" }}
       borderRadius="10px"
       alignItems="center"
       w="320px"
@@ -45,7 +46,9 @@ export const CountryPreview = ({
         />
       </Box>
       <Link to={`country/${title}`}>
-        <Button>Details</Button>
+        <Button mt="5px" _hover={{ bgColor: "whiteAlpha.800" }}>
+          Details
+        </Button>
       </Link>
     </VStack>
   );

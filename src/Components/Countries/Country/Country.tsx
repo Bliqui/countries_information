@@ -11,7 +11,6 @@ import {
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { ArrowBackIcon } from "@chakra-ui/icons";
-import { LanguageServiceMode } from "typescript";
 
 type CountryProps = {
   country: {
@@ -36,13 +35,14 @@ export const Country = ({ country }: CountryProps) => {
   const navigate = useNavigate();
   const navigateToHome = () => navigate("/");
   return (
-    <Box pt="30px">
+    <Box _dark={{ bgColor: "gray.700" }} bgColor="gray.200" py="30px">
       <Box maxW="1100px" mx="auto">
         <Button
           aria-label="button to the main page"
           mb="40px"
           leftIcon={<ArrowBackIcon />}
           onClick={navigateToHome}
+          _hover={{ bgColor: "whiteAlpha.800" }}
         >
           Back
         </Button>
