@@ -23,8 +23,10 @@ export const Main = () => {
         <Flex
           flexDir={{ base: "column", md: "row" }}
           mx={{ base: "auto", md: "0" }}
-          alignItems={{ base: "center", md: "flex-start" }}
+          alignItems="center"
+          justifyContent={{ base: "center", md: "space-between" }}
           gap={{ base: "20px", md: "0" }}
+          w={{ base: "100%" }}
         >
           <TextInputWithSearchIcon
             placeholder="Search for country..."

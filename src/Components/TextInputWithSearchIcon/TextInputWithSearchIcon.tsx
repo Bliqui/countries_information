@@ -15,7 +15,7 @@ export const TextInputWithSearchIcon = ({
   onChange,
 }: InputProps) => {
   return (
-    <InputGroup minW="100px">
+    <InputGroup mx={{ base: "auto", md: "0" }} w={{ base: "95%", md: "300px" }}>
       <InputLeftElement
         pointerEvents="none"
         children={<SearchIcon color="gray.300" />}
