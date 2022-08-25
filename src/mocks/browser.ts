@@ -25,7 +25,7 @@ export const server = setupServer(
           },
           {
             name: { common: "Russia" },
-            population: 40000000,
+            population: 60000000,
             flags: { png: "url" },
             region: "Europe",
             capital: ["Moscow"],

@@ -1,7 +1,6 @@
 import {
   Image,
   Box,
-  Button,
   HStack,
   Heading,
   VStack,
@@ -10,9 +9,9 @@ import {
   Badge,
   Flex,
 } from "@chakra-ui/react";
-import { useNavigate } from "react-router-dom";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Map } from "./Map/Map";
+import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
 
 type CountryProps = {
   country: {
@@ -34,20 +33,30 @@ type CountryProps = {
 };
 
 export const Country = ({ country }: CountryProps) => {
-  const navigate = useNavigate();
-  const navigateToHome = () => navigate("/");
   return (
     <Box _dark={{ bgColor: "gray.700" }} bgColor="gray.200" py="30px">
       <Box maxW={{ base: "90%", md: "1100px" }} mx="auto">
-        <Button
-          aria-label="button to the main page"
+        <LinkAsButtonRouter
+          py="8px"
+          px="20px"
           mb="40px"
-          leftIcon={<ArrowBackIcon />}
-          onClick={navigateToHome}
-          _hover={{ bgColor: "whiteAlpha.800" }}
+          display="flex"
+          alignItems="center"
+          gap="5px"
+          maxW="100px"
+          borderRadius="10px"
+          _hover={{ textTransform: "none", bgColor: "whiteAlpha.900" }}
+          _active={{ bgColor: "blackAlpha.400" }}
+          _dark={{
+            bgColor: "blackAlpha.500",
+            _hover: { bgColor: "whiteAlpha.200" },
+          }}
+          bgColor="whiteAlpha.700"
+          navigateTo={`/`}
         >
+          <ArrowBackIcon />
           Back
-        </Button>
+        </LinkAsButtonRouter>
         <Flex
           direction={{ base: "column", md: "row" }}
           alignItems={{ base: "center" }}

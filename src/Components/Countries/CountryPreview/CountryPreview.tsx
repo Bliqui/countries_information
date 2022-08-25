@@ -1,6 +1,8 @@
-import { VStack, Image, Box, Button } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { VStack, Image, Box, Button, Link } from "@chakra-ui/react";
 import { CountryDescription } from "./CountryDescription/CountryDescription";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { transform } from "typescript";
+import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
 
 type CountryProps = {
   src: string;
@@ -45,11 +47,22 @@ export const CountryPreview = ({
           capital={capital}
         />
       </Box>
-      <Link to={`country/${title.toLowerCase()}`}>
-        <Button mt="5px" _hover={{ bgColor: "whiteAlpha.800" }}>
-          Details
-        </Button>
-      </Link>
+      <LinkAsButtonRouter
+        py="8px"
+        px="20px"
+        mt="20px"
+        borderRadius="10px"
+        _hover={{ textTransform: "none", bgColor: "whiteAlpha.900" }}
+        _active={{ bgColor: "blackAlpha.400" }}
+        _dark={{
+          bgColor: "blackAlpha.500",
+          _hover: { bgColor: "whiteAlpha.200" },
+        }}
+        bgColor="whiteAlpha.700"
+        navigateTo={`country/${title.toLowerCase()}`}
+      >
+        Details
+      </LinkAsButtonRouter>
     </VStack>
   );
 };
