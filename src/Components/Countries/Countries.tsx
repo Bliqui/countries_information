@@ -57,7 +57,7 @@ export const Countries = ({
     <Flex flexDir="column" mt="50px">
       {error && <Text>{error}</Text>}
       {isLoading ? (
-        <Spinner mt="20%" alignSelf="center" size="lg" />
+        <Spinner data-testid="spinner" mt="20%" alignSelf="center" size="lg" />
       ) : (
         <SimpleGrid
           alignItems="center"

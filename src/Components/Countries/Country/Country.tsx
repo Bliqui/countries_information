@@ -8,9 +8,11 @@ import {
   Text,
   chakra,
   Badge,
+  Flex,
 } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 import { ArrowBackIcon } from "@chakra-ui/icons";
+import { Map } from "./Map/Map";
 
 type CountryProps = {
   country: {
@@ -36,7 +38,7 @@ export const Country = ({ country }: CountryProps) => {
   const navigateToHome = () => navigate("/");
   return (
     <Box _dark={{ bgColor: "gray.700" }} bgColor="gray.200" py="30px">
-      <Box maxW="1100px" mx="auto">
+      <Box maxW={{ base: "90%", md: "1100px" }} mx="auto">
         <Button
           aria-label="button to the main page"
           mb="40px"
@@ -46,9 +48,18 @@ export const Country = ({ country }: CountryProps) => {
         >
           Back
         </Button>
-        <HStack spacing="80px">
-          <Image w="500px" h="400px" src={country.flag} alt="flag" />
-          <Box>
+        <Flex
+          direction={{ base: "column", md: "row" }}
+          alignItems={{ base: "center" }}
+          gap="80px"
+        >
+          <Image
+            w={{ base: "100%", md: "500px" }}
+            h={{ md: "100%" }}
+            src={country.flag}
+            alt="flag"
+          />
+          <Box maxW={{ base: "90%" }} mx={{ base: "auto" }}>
             <Heading py="30px">{country.name}</Heading>
             <HStack spacing="60px" alignItems="flex-start">
               <VStack alignItems="flex-start">
@@ -75,7 +86,7 @@ export const Country = ({ country }: CountryProps) => {
               </VStack>
               <VStack alignItems="flex-start">
                 <Text>
-                  <chakra.span fontWeight="600">Level Domain: </chakra.span>Top
+                  <chakra.span fontWeight="600">Top Level Domain: </chakra.span>
                   {country.topLevelDomain}
                 </Text>
                 <Text>
@@ -115,7 +126,8 @@ export const Country = ({ country }: CountryProps) => {
               )}
             </Text>
           </Box>
-        </HStack>
+        </Flex>
+        <Map />
       </Box>
     </Box>
   );

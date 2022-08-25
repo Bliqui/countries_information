@@ -45,7 +45,7 @@ export const CountryPreview = ({
           capital={capital}
         />
       </Box>
-      <Link to={`country/${title}`}>
+      <Link to={`country/${title.toLowerCase()}`}>
         <Button mt="5px" _hover={{ bgColor: "whiteAlpha.800" }}>
           Details
         </Button>

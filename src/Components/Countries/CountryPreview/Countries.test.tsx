@@ -1,35 +1,46 @@
-import { screen, render } from "@testing-library/react";
+import {
+  screen,
+  render,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 import { Countries } from "../Countries";
-import { rest } from "msw";
 import { server } from "../../../mocks/browser";
+import { customRender } from "../../../test-utils";
+
+beforeAll(() => {
+  // Establish requests interception layer before all tests.
+  server.listen();
+});
+
+afterEach(() => {
+  server.resetHandlers();
+});
+
+afterAll(() => {
+  // Clean up after all tests are done, preventing this
+  // interception layer from affecting irrelevant tests.
+  server.close();
+});
 
 describe("Countries component", () => {
-  beforeAll(() => {
-    // Establish requests interception layer before all tests.
-    server.listen();
-  });
-
-  beforeEach(() => {
-    server.restoreHandlers();
-    render(<Countries searchResult="Poland" selectedOption="Europe" />);
-  });
-
-  afterAll(() => {
-    // Clean up after all tests are done, preventing this
-    // interception layer from affecting irrelevant tests.
-    server.close();
-  });
-
-  it("should render component properly", async () => {
-    const component = await screen.findByText(/Poland/i);
-
-    expect(component).toBeInTheDocument();
-  });
-
   it("renders with capital, population, flag and region information", async () => {
-    const element = await screen.findByTestId("countryCard");
+    customRender(<Countries searchResult="Poland" selectedOption="Europe" />);
+    expect(await screen.findByTestId("spinner")).toBeInTheDocument();
 
-    expect(element.textContent).toContain("Region:Europe");
-    expect(element.textContent).toContain("Capital:Warsaw");
+    await waitForElementToBeRemoved(() => screen.queryByTestId("spinner"));
+
+    expect(await screen.findByText(/Poland/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Warsaw/i)).toBeInTheDocument();
+    expect(await screen.findByText(/40 000 000/i)).toBeInTheDocument();
+    expect(await screen.findByText(/Europe/i)).toBeInTheDocument();
+  });
+
+  it('shows "No countries found" if invalid value passed trough the search input', async () => {
+    render(<Countries searchResult="ABCD" selectedOption="Europe" />);
+
+    expect(await screen.findByTestId("spinner")).toBeInTheDocument();
+    await waitForElementToBeRemoved(() => screen.queryByTestId("spinner"));
+
+    expect(screen.getByText("No countries found")).toBeInTheDocument();
   });
 });

@@ -1,4 +1,4 @@
-import { Box, Flex, HStack } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import { useState } from "react";
 import { Countries } from "../Countries/Countries";
 import { SelectInput } from "../SelectInput/SelectInput";
@@ -20,7 +20,12 @@ export const Main = () => {
   return (
     <Box maxW="1100px" mx="auto">
       <Flex py="30px" flexDir="column">
-        <HStack>
+        <Flex
+          flexDir={{ base: "column", md: "row" }}
+          mx={{ base: "auto", md: "0" }}
+          alignItems={{ base: "center", md: "flex-start" }}
+          gap={{ base: "20px", md: "0" }}
+        >
           <TextInputWithSearchIcon
             placeholder="Search for country..."
             width="25rem"
@@ -32,7 +37,7 @@ export const Main = () => {
             selectOptions={selectOptions}
             onSelect={setSelectedOption}
           />
-        </HStack>
+        </Flex>
         <Countries searchResult={inputValue} selectedOption={selectedOption} />
       </Flex>
       <ScrollToTop />
