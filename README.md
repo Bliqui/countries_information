@@ -4,7 +4,7 @@ This application offers you to find any country and shows you brief information 
 
 In this application, the following tools were used: 
 
-```React```, ```TypeScript```, ```Chakra UI```, ```React Testing Library```, ```Jest```.
+```React```, ```TypeScript```, ```Chakra UI```, ```React Router DOM```, ```React Testing Library```, ```Jest```.
 
 Also, the following APIs:
 
