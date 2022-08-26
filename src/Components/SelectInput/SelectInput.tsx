@@ -22,6 +22,7 @@ export const SelectInput = ({
       placeholder={placeholder}
       onChange={handleChange}
       minW="100px"
+      userSelect="none"
     >
       {selectOptions.map(({ title, name }) => {
         return (

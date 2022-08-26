@@ -26,6 +26,7 @@ export const TextInputWithSearchIcon = ({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           onChange(e.target.value)
         }
+        userSelect="none"
         type="text"
         placeholder={placeholder}
       />
