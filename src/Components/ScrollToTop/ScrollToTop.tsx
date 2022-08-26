@@ -32,15 +32,14 @@ export const ScrollToTop = () => {
       right="5%"
       bgColor="gray.200"
       _hover={{ bgColor: "gray.300" }}
-      borderColor="blackAlpha.600"
+      boxShadow="0px 0px 4px 0px rgba(0, 0, 0, 1)"
       _dark={{
         bgColor: "gray.700",
         _hover: { bgColor: "gray.800" },
-        borderColor: "whiteAlpha.600",
+        boxShadow: "0px 0px 4px 0px rgba(255, 255, 255, .01)",
       }}
       display={buttonVisible ? "inline" : "none"}
       onClick={scrollToTheTopOfThePage}
-      border="1px solid"
     >
       <ArrowUpIcon />
     </Button>

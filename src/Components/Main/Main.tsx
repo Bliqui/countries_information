@@ -18,7 +18,7 @@ export const Main = () => {
   const [selectedOption, setSelectedOption] = useState("");
 
   return (
-    <Box maxW="1100px" mx="auto">
+    <Box maxW={{ md: "90%", lg: "1100px" }} mx="auto">
       <Flex py="30px" flexDir="column">
         <Flex
           flexDir={{ base: "column", md: "row" }}

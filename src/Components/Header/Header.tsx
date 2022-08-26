@@ -6,7 +6,7 @@ export const Header = () => {
     <chakra.header
       py="20px"
       display="flex"
-      maxW={{ base: "90%", md: "1100px" }}
+      maxW={{ sm: "90%", lg: "1100px" }}
       mx="auto"
       justifyContent="space-between"
     >

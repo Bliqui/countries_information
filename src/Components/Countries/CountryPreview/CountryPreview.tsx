@@ -27,6 +27,7 @@ export const CountryPreview = ({
       alignItems="center"
       w="320px"
       minH="400px"
+      h="100%"
       mx="auto"
       data-testid="countryCard"
       boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .6)"
