@@ -3,6 +3,7 @@ import {
   Box,
   HStack,
   Heading,
+  Center,
   VStack,
   Text,
   chakra,
@@ -12,6 +13,7 @@ import {
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Map } from "./Map/Map";
 import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
+import { CountryDescription } from "./CountryDescription/CountryDescription";
 
 type CountryProps = {
   country: {
@@ -29,6 +31,7 @@ type CountryProps = {
     }[];
     flag: string;
     borders: string[];
+    latlng: [number, number];
   };
 };
 
@@ -72,26 +75,26 @@ export const Country = ({ country }: CountryProps) => {
             <Heading py="30px">{country.name}</Heading>
             <HStack spacing="60px" alignItems="flex-start">
               <VStack alignItems="flex-start">
-                <Text>
-                  <chakra.span fontWeight="600">Native Name: </chakra.span>
-                  {country.nativeName}
-                </Text>
-                <Text>
-                  <chakra.span fontWeight="600">Population: </chakra.span>
-                  {Intl.NumberFormat().format(country.population)}
-                </Text>
-                <Text>
-                  <chakra.span fontWeight="600">Region: </chakra.span>
-                  {country.region}
-                </Text>
-                <Text>
-                  <chakra.span fontWeight="600">Sub Region: </chakra.span>
-                  {country.subRegion ? country.subRegion : "None"}
-                </Text>
-                <Text>
-                  <chakra.span fontWeight="600">Capital: </chakra.span>
-                  {country.capital}
-                </Text>
+                <CountryDescription
+                  descName="Native Name:"
+                  descValue={country.nativeName}
+                />
+                <CountryDescription
+                  descName="Population:"
+                  descValue={Intl.NumberFormat().format(country.population)}
+                />
+                <CountryDescription
+                  descName="Region:"
+                  descValue={country.region}
+                />
+                <CountryDescription
+                  descName="Sub Region:"
+                  descValue={country.subRegion ? country.subRegion : "None"}
+                />
+                <CountryDescription
+                  descName="Capital:"
+                  descValue={country.capital}
+                />
               </VStack>
               <VStack alignItems="flex-start">
                 <Text>
@@ -136,7 +139,15 @@ export const Country = ({ country }: CountryProps) => {
             </Text>
           </Box>
         </Flex>
-        <Map />
+        <Map mapView={country.latlng} />
+        {country.name === "Poland" && (
+          <Center mt="20px">
+            <audio controls>
+              <source src="/tylkojedno.mp3" type="audio/mp3" />
+              Your browser does not support the audio element.
+            </audio>
+          </Center>
+        )}
       </Box>
     </Box>
   );

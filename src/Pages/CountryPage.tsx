@@ -19,6 +19,7 @@ type countryReq = {
   }[];
   flag: string;
   borders: string[];
+  latlng: [number, number];
 }[];
 
 export const CountryPage = () => {

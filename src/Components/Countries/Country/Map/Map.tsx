@@ -3,16 +3,16 @@ import { Box } from "@chakra-ui/react";
 import { MapContainer } from "react-leaflet";
 import { MapElements } from "./MapElements/MapElements";
 
-export const Map = () => {
+export const Map = ({ mapView }: { mapView: [number, number] }) => {
   return (
     <Box id="map" mt="30px" h={{ base: "200px", md: "300px" }} w="100%">
       <MapContainer
-        center={[51.505, -0.09]}
-        zoom={13}
+        center={mapView}
+        zoom={5}
         style={{ height: "100%" }}
         scrollWheelZoom={false}
       >
-        <MapElements />
+        <MapElements mapView={mapView} />
       </MapContainer>
     </Box>
   );

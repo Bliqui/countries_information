@@ -1,13 +1,13 @@
 import { Marker, Popup, TileLayer, useMap } from "react-leaflet";
 
-export const MapElements = () => {
+export const MapElements = ({ mapView }: { mapView: [number, number] }) => {
   const map = useMap();
-  map.setView([1, 1]);
+  map.setView(mapView);
 
   return (
     <>
       <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
-      <Marker position={[51.505, -0.09]}>
+      <Marker position={mapView}>
         <Popup>A pretty CSS3 popup, Easily customizable.</Popup>
       </Marker>
     </>
