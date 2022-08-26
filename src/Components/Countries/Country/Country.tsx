@@ -15,7 +15,7 @@ import { Map } from "./Map/Map";
 import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
 import { CountryDescription } from "./CountryDescription/CountryDescription";
 
-type CountryProps = {
+export type CountryProps = {
   country: {
     name: string;
     capital: string;

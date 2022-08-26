@@ -3,9 +3,9 @@ import {
   render,
   waitForElementToBeRemoved,
 } from "@testing-library/react";
-import { Countries } from "../Countries";
-import { server } from "../../../mocks/browser";
-import { customRender } from "../../../test-utils";
+import { Countries } from "./Countries";
+import { server } from "../../mocks/browser";
+import { customRender } from "../../test-utils";
 
 beforeAll(() => {
   // Establish requests interception layer before all tests.
@@ -23,7 +23,7 @@ afterAll(() => {
 });
 
 describe("Countries component", () => {
-  it("renders with capital, population, flag and region information", async () => {
+  it("should show loader, hide it and show list of countries after", async () => {
     customRender(<Countries searchResult="Poland" selectedOption="Europe" />);
     expect(await screen.findByTestId("spinner")).toBeInTheDocument();
 
@@ -31,7 +31,6 @@ describe("Countries component", () => {
 
     expect(await screen.findByText(/Poland/i)).toBeInTheDocument();
     expect(await screen.findByText(/Warsaw/i)).toBeInTheDocument();
-    expect(await screen.findByText(/40 000 000/i)).toBeInTheDocument();
     expect(await screen.findByText(/Europe/i)).toBeInTheDocument();
   });
 

@@ -6,6 +6,13 @@ import { server } from "./mocks/browser";
 
 import "@testing-library/jest-dom";
 
+jest.mock("react-leaflet", () => ({
+  MapContainer: () => null,
+  Marker: () => null,
+  Popup: () => null,
+  TileLayer: () => null,
+}));
+
 if (process.env.NODE_ENV === "development") {
   server.listen();
 }

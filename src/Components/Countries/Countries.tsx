@@ -49,10 +49,6 @@ export const Countries = ({
       return name.common.toLowerCase().includes(searchResult.toLowerCase());
     });
 
-  if (filteredCountries?.length === 0) {
-    filteredCountries = sortedCountries;
-  }
-
   return (
     <Flex flexDir="column" mt="50px">
       {error && <Text>{error}</Text>}
@@ -65,7 +61,7 @@ export const Countries = ({
           columnGap="60px"
           minChildWidth="320px"
         >
-          {filteredCountries?.length ? (
+          {filteredCountries?.length > 0 ? (
             filteredCountries.map(
               ({ name, flags, population, region, capital }) => {
                 return (
