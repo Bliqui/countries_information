@@ -29,6 +29,7 @@ export const CountryPreview = ({
       h="400px"
       mx="auto"
       data-testid="countryCard"
+      boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .6)"
     >
       <Box h="180px" w="100%">
         <Image
@@ -50,7 +51,6 @@ export const CountryPreview = ({
       <LinkAsButtonRouter
         py="8px"
         px="20px"
-        mt="20px"
         borderRadius="10px"
         _hover={{ textTransform: "none", bgColor: "whiteAlpha.900" }}
         _active={{ bgColor: "blackAlpha.400" }}
@@ -60,6 +60,8 @@ export const CountryPreview = ({
         }}
         bgColor="whiteAlpha.700"
         navigateTo={`country/${title.toLowerCase()}`}
+        boxShadow="0px 0px 4px 0px rgba(66, 68, 90, 1)"
+        display="block"
       >
         Details
       </LinkAsButtonRouter>

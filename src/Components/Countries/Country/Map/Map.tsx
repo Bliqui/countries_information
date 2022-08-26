@@ -5,7 +5,13 @@ import { MapElements } from "./MapElements/MapElements";
 
 export const Map = ({ mapView }: { mapView: [number, number] }) => {
   return (
-    <Box id="map" mt="30px" h={{ base: "200px", md: "300px" }} w="100%">
+    <Box
+      boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .6)"
+      id="map"
+      mt="30px"
+      h={{ base: "200px", md: "300px" }}
+      w="100%"
+    >
       <MapContainer
         center={mapView}
         zoom={5}

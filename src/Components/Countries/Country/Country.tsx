@@ -54,6 +54,7 @@ export const Country = ({ country }: CountryProps) => {
             bgColor: "blackAlpha.500",
             _hover: { bgColor: "whiteAlpha.200" },
           }}
+          boxShadow="0px 0px 4px 0px rgba(66, 68, 90, 1)"
           bgColor="whiteAlpha.700"
           navigateTo={`/`}
         >
@@ -70,6 +71,7 @@ export const Country = ({ country }: CountryProps) => {
             h={{ md: "100%" }}
             src={country.flag}
             alt="flag"
+            boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .6)"
           />
           <Box maxW={{ base: "90%" }} mx={{ base: "auto" }}>
             <Heading py="30px">{country.name}</Heading>
@@ -128,7 +130,11 @@ export const Country = ({ country }: CountryProps) => {
               {country.borders ? (
                 country.borders.map((country) => {
                   return (
-                    <Badge mx="5px" key={country}>
+                    <Badge
+                      mx="5px"
+                      boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .3)"
+                      key={country}
+                    >
                       {country}
                     </Badge>
                   );
