@@ -2,6 +2,9 @@
 
 This application offers you to find any country and shows you brief information about it.
 
+[Try out here!](https://countries-information-beta.vercel.app/)
+Deployed on [Vercel](https://vercel.com/)
+
 In this application, the following tools were used: 
 
 ```React```, ```TypeScript```, ```Chakra UI```, ```React Router DOM```, ```React Testing Library```, ```Jest```.
