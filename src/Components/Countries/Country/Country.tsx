@@ -63,10 +63,10 @@ export const Country = ({ country }: CountryProps) => {
         <Flex
           direction={{ base: "column", md: "row" }}
           alignItems={{ base: "center" }}
-          gap="80px"
+          gap={{ md: "40px", lg: "60px" }}
         >
           <Image
-            w={{ base: "100%", md: "500px" }}
+            w={{ base: "100%", md: "450px" }}
             h={{ md: "100%" }}
             src={country.flag}
             alt="flag"
