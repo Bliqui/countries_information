@@ -26,7 +26,7 @@ export const CountryPreview = ({
       borderRadius="10px"
       alignItems="center"
       w="320px"
-      h="400px"
+      minH="400px"
       mx="auto"
       data-testid="countryCard"
       boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .6)"
@@ -38,6 +38,7 @@ export const CountryPreview = ({
           src={src}
           h="100%"
           w="100%"
+          userSelect="none"
         />
       </Box>
       <Box width="100%" px="20px" mt="20px" textAlign="start">

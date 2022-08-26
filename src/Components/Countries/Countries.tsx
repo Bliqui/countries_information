@@ -58,7 +58,7 @@ export const Countries = ({
         <SimpleGrid
           alignItems="center"
           rowGap="80px"
-          columnGap="60px"
+          columnGap={{ sm: "20px", md: "40px", lg: "60px" }}
           minChildWidth="320px"
         >
           {filteredCountries?.length > 0 ? (

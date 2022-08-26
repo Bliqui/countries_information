@@ -15,7 +15,7 @@ export const TextInputWithSearchIcon = ({
   onChange,
 }: InputProps) => {
   return (
-    <InputGroup mx={{ base: "auto", md: "0" }} w={{ base: "95%", md: "300px" }}>
+    <InputGroup mx={{ base: "auto", sm: "0" }} w={{ base: "300px" }}>
       <InputLeftElement
         pointerEvents="none"
         children={<SearchIcon color="gray.300" />}
@@ -26,6 +26,7 @@ export const TextInputWithSearchIcon = ({
         onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
           onChange(e.target.value)
         }
+        userSelect="none"
         type="text"
         placeholder={placeholder}
       />

@@ -109,7 +109,7 @@ export const Country = ({ country }: CountryProps) => {
                     <chakra.span key={cur.name}>
                       {country.currencies.length === i + 1
                         ? cur.name
-                        : cur.name + ","}
+                        : cur.name + ", "}
                     </chakra.span>
                   ))}
                 </Text>
@@ -119,7 +119,7 @@ export const Country = ({ country }: CountryProps) => {
                     <chakra.span pr="5px" key={l.name}>
                       {country.languages.length === i + 1
                         ? l.name
-                        : l.name + ","}
+                        : l.name + ", "}
                     </chakra.span>
                   ))}
                 </Text>
@@ -134,6 +134,8 @@ export const Country = ({ country }: CountryProps) => {
                       mx="5px"
                       boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .3)"
                       key={country}
+                      _hover={{ transform: "scale(1.1)" }}
+                      cursor="default"
                     >
                       {country}
                     </Badge>
@@ -147,7 +149,7 @@ export const Country = ({ country }: CountryProps) => {
         </Flex>
         <Map mapView={country.latlng} />
         {country.name === "Poland" && (
-          <Center mt="20px">
+          <Center mt="30px">
             <audio controls>
               <source src="/tylkojedno.mp3" type="audio/mp3" />
               Your browser does not support the audio element.
