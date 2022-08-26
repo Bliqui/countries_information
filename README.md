@@ -1,22 +1,31 @@
 # Countries search application.
 
-Pet-project made with TypeScript, React Router V6, Chakra UI, and little bit of tests (Jest, RTL).
+This application offers you to find any country and shows you brief information about it.
+
+In this application, the following tools were used: 
+
+```React```, ```TypeScript```, ```Chakra UI```, ```React Router DOM```, ```React Testing Library```, ```Jest```.
+
+Also, the following APIs:
+
+- [REST COUNTRIES](https://restcountries.com/)
+- [Leaflet](https://leafletjs.com/)
 
 # Home page:
 
-<img width="1280" alt="Screenshot 2022-08-24 at 11 52 20" src="https://user-images.githubusercontent.com/59931735/186388598-8f38d08a-a6c8-4b73-847b-5b7ebe23ecaa.png">
+<img width="1280" alt="Screenshot 2022-08-26 at 11 19 04" src="https://user-images.githubusercontent.com/59931735/186871889-e4a476d7-c5d3-43e2-a30c-c78be25fb3c5.png">
 
 # Find any country by name:
 
-<img width="1280" alt="Screenshot 2022-08-24 at 11 50 10" src="https://user-images.githubusercontent.com/59931735/186388132-7c460bcf-44f5-4893-a7ff-e0bbd7120b08.png">
+<img width="1273" alt="Screenshot 2022-08-26 at 11 19 59" src="https://user-images.githubusercontent.com/59931735/186872051-e1c92b59-2aa9-406b-8ae7-091f0a2e43e3.png">
 
 # Find any country by region:
 
-<img width="1279" alt="Screenshot 2022-08-24 at 11 51 11" src="https://user-images.githubusercontent.com/59931735/186388345-33c758db-1267-4220-a7cb-aa766f2b1476.png">
+<img width="1280" alt="Screenshot 2022-08-26 at 11 20 34" src="https://user-images.githubusercontent.com/59931735/186872159-b7a80f11-6983-411e-974d-46471cca14af.png">
 
 # Country page view:
 
-<img width="1280" alt="Screenshot 2022-08-24 at 11 51 42" src="https://user-images.githubusercontent.com/59931735/186388434-5ca763b4-f473-4014-b3e6-b95c5f13a7ae.png">
+<img width="1280" alt="Screenshot 2022-08-26 at 11 21 03" src="https://user-images.githubusercontent.com/59931735/186872277-bd993c65-801a-4bf8-ada0-eec363f41bf3.png">
 
 # Home Page. Light mode:
 
@@ -24,20 +33,20 @@ Pet-project made with TypeScript, React Router V6, Chakra UI, and little bit of 
 
 # Country Page. Light mode:
 
-<img width="1277" alt="Screenshot 2022-08-24 at 15 51 03" src="https://user-images.githubusercontent.com/59931735/186435839-7435fa4a-97c8-4453-9952-266690907ad3.png">
+<img width="1278" alt="Screenshot 2022-08-26 at 11 22 54" src="https://user-images.githubusercontent.com/59931735/186872631-120cdeb4-22a8-4098-858d-a3805c43abb0.png">
 
 # Home Page. Mobile: 
 
-<img width="206" alt="Screenshot 2022-08-24 at 17 30 35" src="https://user-images.githubusercontent.com/59931735/186459940-974a06d0-8dce-4866-ba8e-973e66878fa6.png">
+<img width="206" alt="Screenshot 2022-08-26 at 11 23 24" src="https://user-images.githubusercontent.com/59931735/186872748-c28df5d8-b615-48d4-bdc3-45de3612f88b.png">
 
 # Country Page. Mobile: 
 
-<img width="206" alt="Screenshot 2022-08-24 at 17 32 01" src="https://user-images.githubusercontent.com/59931735/186460099-686b9aed-d4d4-45c9-a344-1a3f18626b10.png">
+<img width="208" alt="Screenshot 2022-08-26 at 11 24 05" src="https://user-images.githubusercontent.com/59931735/186872883-f6cbf2b7-b313-48c0-91e5-48a4c8fec184.png">
+
+# Home Page. Mobile. Light Mode:
+
+<img width="206" alt="Screenshot 2022-08-26 at 11 27 28" src="https://user-images.githubusercontent.com/59931735/186873563-62917b32-296d-47b7-ace5-725cb8298fe2.png">
 
 # Country Page. Mobile. Light Mode: 
 
-<img width="207" alt="Screenshot 2022-08-24 at 17 34 10" src="https://user-images.githubusercontent.com/59931735/186460542-8488944a-a690-45cd-8adb-f26138b67676.png">
-
-# Country Page. Mobile. Light Mode: 
-
-<img width="207" alt="Screenshot 2022-08-24 at 17 34 56" src="https://user-images.githubusercontent.com/59931735/186460705-bb5c0d17-7599-49a7-bfbe-d6a195a1347b.png">
+<img width="207" alt="Screenshot 2022-08-26 at 11 24 28" src="https://user-images.githubusercontent.com/59931735/186872940-9da70fcb-78f7-4f81-8df7-c1ec3858e2c9.png">
