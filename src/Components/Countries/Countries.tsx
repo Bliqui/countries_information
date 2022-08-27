@@ -20,18 +20,18 @@ export const Countries = ({
 
   const { state, dispatch } = useContext(CountriesContext);
 
-  const isRequestNeeded = () => {
-    if (state.countries.length === receivedCountries?.length) {
-      return state.countries;
-    }
-    dispatch({
-      type: "ADD_COUNTRIES",
-      payload: receivedCountries,
-    });
-  };
+  // const isRequestNeeded = () => {
+  //   if (state.countries.length === receivedCountries?.length) {
+  //     return state.countries;
+  //   }
+
+  // };
 
   useEffect(() => {
-    isRequestNeeded();
+    dispatch({
+      type: "ADD_COUNTRIES",
+      payload: receivedCountries as [],
+    });
   }, [receivedCountries]);
 
   let sortedCountries =

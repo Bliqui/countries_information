@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { Text, Spinner } from "@chakra-ui/react";
 
-type countryReq = {
+type CountryReq = {
   name: string;
   nativeName: string;
   capital: string;
@@ -20,6 +20,7 @@ type countryReq = {
   flag: string;
   borders: string[];
   latlng: [number, number];
+  alpha2Code: string;
 }[];
 
 export const CountryPage = () => {
@@ -28,7 +29,7 @@ export const CountryPage = () => {
     data: recievedCountry,
     isLoading,
     error,
-  } = useFetch<countryReq>(
+  } = useFetch<CountryReq>(
     `https://restcountries.com/v2/name/${params.countryId}`
   );
 

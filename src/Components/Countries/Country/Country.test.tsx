@@ -26,6 +26,7 @@ const mockedCountry: CountryProps["country"] = {
   flag: "flag.png",
   borders: ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
   latlng: [52.0, 20.0],
+  alpha2Code: "Pl",
 };
 
 describe("Country Component", () => {

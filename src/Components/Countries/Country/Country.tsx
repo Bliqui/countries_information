@@ -14,6 +14,7 @@ import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Map } from "./Map/Map";
 import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
 import { CountryDescription } from "./CountryDescription/CountryDescription";
+import { CountryHotTopics } from "./CountryHotTopics/CountryHotTopics";
 
 export type CountryProps = {
   country: {
@@ -32,6 +33,7 @@ export type CountryProps = {
     flag: string;
     borders: string[];
     latlng: [number, number];
+    alpha2Code: string;
   };
 };
 
@@ -148,6 +150,10 @@ export const Country = ({ country }: CountryProps) => {
           </Box>
         </Flex>
         <Map mapView={country.latlng} />
+        <CountryHotTopics
+          countryFlag={country.flag}
+          countryIso={country.alpha2Code}
+        />
         {country.name === "Poland" && (
           <Center mt="30px">
             <audio controls>
