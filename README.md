@@ -36,6 +36,10 @@ REACT_APP_KEY=
 
 <img width="1280" alt="Screenshot 2022-08-26 at 11 21 03" src="https://user-images.githubusercontent.com/59931735/186872277-bd993c65-801a-4bf8-ada0-eec363f41bf3.png">
 
+# Top-6 Popular country news: 
+
+<img width="1279" alt="Screenshot 2022-08-27 at 16 53 45" src="https://user-images.githubusercontent.com/59931735/187035563-dded6e1b-e224-4521-bdd3-498513ea28d4.png"> 
+
 # Home Page. Light mode:
 
  <img width="1280" alt="Screenshot 2022-08-24 at 15 49 50" src="https://user-images.githubusercontent.com/59931735/186435567-3da43c18-e069-4e6f-ac5a-f48178eef8e4.png">
@@ -43,6 +47,10 @@ REACT_APP_KEY=
 # Country Page. Light mode:
 
 <img width="1278" alt="Screenshot 2022-08-26 at 11 22 54" src="https://user-images.githubusercontent.com/59931735/186872631-120cdeb4-22a8-4098-858d-a3805c43abb0.png">
+
+# Top-6 Popular country news. Light mode:
+
+<img width="1280" alt="Screenshot 2022-08-27 at 16 55 14" src="https://user-images.githubusercontent.com/59931735/187035613-d94ea7d5-f0a7-47e0-bd54-b4a54324e131.png">
 
 # Home Page. Mobile: 
 
