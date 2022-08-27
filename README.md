@@ -13,6 +13,12 @@ Also, the following APIs:
 
 - [REST COUNTRIES](https://restcountries.com/)
 - [Leaflet](https://leafletjs.com/)
+- [News API](https://newsapi.org/)
+
+**If you want to fork this repo, you should register and provide your News API key (process.env) to use this app.**
+```sh
+REACT_APP_KEY=
+```
 
 # Home page:
 
