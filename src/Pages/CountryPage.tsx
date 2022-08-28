@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { Country } from "../Components/Countries/Country/Country";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import { Text, Spinner } from "@chakra-ui/react";
+import { Text, Spinner, Box, Flex } from "@chakra-ui/react";
 import { CountriesContext } from "../context/context";
 
 type CountryReq = {
@@ -40,7 +40,11 @@ export const CountryPage = () => {
   if (error) {
     return <Text color="red">{error}</Text>;
   } else if (isLoading) {
-    return <Spinner position="absolute" left="50%" mt="20%" size="lg" />;
+    return (
+      <Flex h="100%" justifyContent="center">
+        <Spinner mt={{ base: "50%", md: "20%" }} mx="auto" size="lg" />
+      </Flex>
+    );
   }
   return recievedCountry ? <Country country={recievedCountry[0]} /> : null;
 };

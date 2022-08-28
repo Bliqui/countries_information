@@ -7,7 +7,6 @@ import {
   VStack,
   Text,
   chakra,
-  Badge,
   Flex,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
