@@ -1,8 +1,8 @@
 import { VStack, Image, Box, Button, Link } from "@chakra-ui/react";
 import { CountryDescription } from "./CountryDescription/CountryDescription";
-import { Link as ReactRouterLink } from "react-router-dom";
-import { transform } from "typescript";
 import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
+import { useContext } from "react";
+import { CountriesContext } from "../../../context/context";
 
 type CountryProps = {
   src: string;
@@ -19,6 +19,12 @@ export const CountryPreview = ({
   region,
   capital,
 }: CountryProps) => {
+  const { state, dispatch } = useContext(CountriesContext);
+
+  const setParams = () => {
+    dispatch({ type: "SET_PARAM", payload: [], param: "alpha" });
+  };
+
   return (
     <VStack
       bgColor="gray.200"
@@ -27,7 +33,6 @@ export const CountryPreview = ({
       alignItems="center"
       w="320px"
       minH="400px"
-      h="100%"
       mx="auto"
       data-testid="countryCard"
       boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .6)"
@@ -64,6 +69,7 @@ export const CountryPreview = ({
         navigateTo={`country/${title.toLowerCase()}`}
         boxShadow="0px 0px 4px 0px rgba(66, 68, 90, 1)"
         display="block"
+        onClick={setParams}
       >
         Details
       </LinkAsButtonRouter>

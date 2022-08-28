@@ -15,6 +15,7 @@ import { Map } from "./Map/Map";
 import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter";
 import { CountryDescription } from "./CountryDescription/CountryDescription";
 import { CountryHotTopics } from "./CountryHotTopics/CountryHotTopics";
+import { BadgeComponent } from "./BadgeComponent/BadgeComponent";
 
 export type CountryProps = {
   country: {
@@ -132,15 +133,7 @@ export const Country = ({ country }: CountryProps) => {
               {country.borders ? (
                 country.borders.map((country) => {
                   return (
-                    <Badge
-                      mx="5px"
-                      boxShadow="0px 0px 8px 0px rgba(66, 68, 90, .3)"
-                      key={country}
-                      _hover={{ transform: "scale(1.1)" }}
-                      cursor="default"
-                    >
-                      {country}
-                    </Badge>
+                    <BadgeComponent key={country} countryShort={country} />
                   );
                 })
               ) : (

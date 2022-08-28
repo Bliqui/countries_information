@@ -20,17 +20,13 @@ export const Countries = ({
 
   const { state, dispatch } = useContext(CountriesContext);
 
-  // const isRequestNeeded = () => {
-  //   if (state.countries.length === receivedCountries?.length) {
-  //     return state.countries;
-  //   }
-
-  // };
+  console.log(state);
 
   useEffect(() => {
     dispatch({
       type: "ADD_COUNTRIES",
-      payload: receivedCountries as [],
+      payload: receivedCountries as DataType[],
+      param: "name",
     });
   }, [receivedCountries]);
 
@@ -77,7 +73,7 @@ export const Countries = ({
               }
             )
           ) : (
-            <Text color="red.500" textAlign="center">
+            <Text color="crimson" textAlign="center">
               No countries found
             </Text>
           )}

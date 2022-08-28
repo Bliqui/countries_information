@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Country } from "../Components/Countries/Country/Country";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
 import { Text, Spinner } from "@chakra-ui/react";
+import { CountriesContext } from "../context/context";
 
 type CountryReq = {
   name: string;
@@ -24,7 +25,10 @@ type CountryReq = {
 }[];
 
 export const CountryPage = () => {
+  const { state } = useContext(CountriesContext);
   const params = useParams();
+
+  console.log(state);
   const {
     data: recievedCountry,
     isLoading,

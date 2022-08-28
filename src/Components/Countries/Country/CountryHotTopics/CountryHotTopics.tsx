@@ -82,7 +82,9 @@ export const CountryHotTopics = ({
                   <Heading mb="10px" size="md">
                     {textLengthFormate(article.title, 70)}
                   </Heading>
-                  <Text>{textLengthFormate(article.description, 120)}</Text>
+                  {article.description && (
+                    <Text>{textLengthFormate(article.description, 120)}</Text>
+                  )}
                   <Box>
                     <Text mt="10px" mb="5px" fontWeight={600}>
                       {article.author && `Author: ${article.author}`}

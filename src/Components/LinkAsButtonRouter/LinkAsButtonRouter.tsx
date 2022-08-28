@@ -7,6 +7,7 @@ type LinkAsButtonRouterProps = LinkProps & {
   children: ReactNode;
   marTop?: string;
   marBottom?: string;
+  onClick?: () => void;
 };
 
 export const LinkAsButtonRouter = ({
@@ -14,10 +15,11 @@ export const LinkAsButtonRouter = ({
   children,
   marTop = "0",
   marBottom = "0",
+  onClick = () => {},
   ...rest
 }: LinkAsButtonRouterProps) => {
   return (
-    <Link as={ReactRouterLink} to={navigateTo} {...rest}>
+    <Link onClick={onClick} as={ReactRouterLink} to={navigateTo} {...rest}>
       {children}
     </Link>
   );
