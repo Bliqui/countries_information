@@ -22,19 +22,19 @@ REACT_APP_KEY=
 
 # Home page:
 
-<img width="1280" alt="Screenshot 2022-08-26 at 11 19 04" src="https://user-images.githubusercontent.com/59931735/186871889-e4a476d7-c5d3-43e2-a30c-c78be25fb3c5.png">
+<img width="1280" alt="Screenshot 2022-08-28 at 11 51 27" src="https://user-images.githubusercontent.com/59931735/187068073-fe751254-78f4-418f-a146-601830256815.png">
 
 # Find any country by name:
 
-<img width="1273" alt="Screenshot 2022-08-26 at 11 19 59" src="https://user-images.githubusercontent.com/59931735/186872051-e1c92b59-2aa9-406b-8ae7-091f0a2e43e3.png">
+<img width="1280" alt="Screenshot 2022-08-28 at 11 53 41" src="https://user-images.githubusercontent.com/59931735/187068168-2fd4eee9-d539-4152-adcc-756b01d77fc7.png">
 
 # Find any country by region:
 
-<img width="1280" alt="Screenshot 2022-08-26 at 11 20 34" src="https://user-images.githubusercontent.com/59931735/186872159-b7a80f11-6983-411e-974d-46471cca14af.png">
+<img width="1280" alt="Screenshot 2022-08-28 at 11 54 10" src="https://user-images.githubusercontent.com/59931735/187068188-25e43adf-8b23-4516-a151-17d8b2d6d2b2.png">
 
 # Country page view:
 
-<img width="1280" alt="Screenshot 2022-08-26 at 11 21 03" src="https://user-images.githubusercontent.com/59931735/186872277-bd993c65-801a-4bf8-ada0-eec363f41bf3.png">
+<img width="1280" alt="Screenshot 2022-08-28 at 11 54 52" src="https://user-images.githubusercontent.com/59931735/187068205-68d8578f-33d0-47fe-b11c-4f5e0bbfcb27.png">
 
 # Top-6 Popular country news: 
 
@@ -42,11 +42,11 @@ REACT_APP_KEY=
 
 # Home Page. Light mode:
 
- <img width="1280" alt="Screenshot 2022-08-24 at 15 49 50" src="https://user-images.githubusercontent.com/59931735/186435567-3da43c18-e069-4e6f-ac5a-f48178eef8e4.png">
+<img width="1280" alt="Screenshot 2022-08-28 at 11 52 36" src="https://user-images.githubusercontent.com/59931735/187068121-3757be3a-bffc-4828-9b0b-0e2c4fc00e76.png">
 
 # Country Page. Light mode:
 
-<img width="1278" alt="Screenshot 2022-08-26 at 11 22 54" src="https://user-images.githubusercontent.com/59931735/186872631-120cdeb4-22a8-4098-858d-a3805c43abb0.png">
+<img width="1280" alt="Screenshot 2022-08-28 at 11 55 47" src="https://user-images.githubusercontent.com/59931735/187068236-e00caf91-8c93-4659-8a13-45bd5ed38e5d.png">
 
 # Top-6 Popular country news. Light mode:
 
@@ -54,16 +54,25 @@ REACT_APP_KEY=
 
 # Home Page. Mobile: 
 
-<img width="206" alt="Screenshot 2022-08-26 at 11 23 24" src="https://user-images.githubusercontent.com/59931735/186872748-c28df5d8-b615-48d4-bdc3-45de3612f88b.png">
+<img width="208" alt="Screenshot 2022-08-28 at 11 59 22" src="https://user-images.githubusercontent.com/59931735/187068386-09e54195-1f97-43c1-b18b-715cabf08867.png">
 
 # Country Page. Mobile: 
 
-<img width="208" alt="Screenshot 2022-08-26 at 11 24 05" src="https://user-images.githubusercontent.com/59931735/186872883-f6cbf2b7-b313-48c0-91e5-48a4c8fec184.png">
+<img width="208" alt="Screenshot 2022-08-28 at 11 59 52" src="https://user-images.githubusercontent.com/59931735/187068403-393a9502-a0fa-454f-b2b2-d2e27196de93.png">
+
+# Top-6 Popular country news. Mobile:
+
+<img width="207" alt="Screenshot 2022-08-28 at 12 05 41" src="https://user-images.githubusercontent.com/59931735/187068586-0409ba81-1d02-46e1-bae2-30d5d924a5a6.png">
 
 # Home Page. Mobile. Light Mode:
 
-<img width="206" alt="Screenshot 2022-08-26 at 11 27 28" src="https://user-images.githubusercontent.com/59931735/186873563-62917b32-296d-47b7-ace5-725cb8298fe2.png">
+<img width="209" alt="Screenshot 2022-08-28 at 12 03 26" src="https://user-images.githubusercontent.com/59931735/187068513-1af60a6f-2b14-477c-8fc2-a0a88bc5cec7.png">
+
 
 # Country Page. Mobile. Light Mode: 
 
-<img width="207" alt="Screenshot 2022-08-26 at 11 24 28" src="https://user-images.githubusercontent.com/59931735/186872940-9da70fcb-78f7-4f81-8df7-c1ec3858e2c9.png">
+<img width="206" alt="Screenshot 2022-08-28 at 12 02 06" src="https://user-images.githubusercontent.com/59931735/187068479-b34e0d07-f78e-4af3-b8e0-1859b7a5ba0a.png">
+
+# Top-6 Popular country news. Mobile. Light mode:
+
+<img width="207" alt="Screenshot 2022-08-28 at 12 04 51" src="https://user-images.githubusercontent.com/59931735/187068559-28277459-135c-4564-a393-f4a0386f8f81.png">
