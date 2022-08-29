@@ -45,8 +45,11 @@ export type CountryProps = {
 export const Country = ({ country }: CountryProps) => {
   const { dispatch } = useContext(CountriesContext);
 
-  const onSetNameParam = () => {
+  const onSetAlphaParam = () => {
     dispatch({ type: "SET_PARAM", param: "alpha" });
+  };
+  const onSetNameParam = () => {
+    dispatch({ type: "SET_PARAM", param: "name" });
   };
 
   return (
@@ -70,6 +73,7 @@ export const Country = ({ country }: CountryProps) => {
           boxShadow="0px 0px 4px 0px rgba(66, 68, 90, 1)"
           bgColor="whiteAlpha.700"
           navigateTo={`/`}
+          onClick={onSetNameParam}
         >
           <ArrowBackIcon />
           Back
@@ -155,7 +159,7 @@ export const Country = ({ country }: CountryProps) => {
                 country.borders.map((country) => {
                   return (
                     <BadgeComponent
-                      onClick={onSetNameParam}
+                      onClick={onSetAlphaParam}
                       key={country}
                       countryShort={country}
                     />

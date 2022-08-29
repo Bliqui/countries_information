@@ -20,8 +20,6 @@ export const Countries = ({
 
   const { state, dispatch } = useContext(CountriesContext);
 
-  console.log(state);
-
   useEffect(() => {
     dispatch({
       type: "ADD_COUNTRIES",

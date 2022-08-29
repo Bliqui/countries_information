@@ -29,8 +29,6 @@ export const CountryPage = () => {
   const { state } = useContext(CountriesContext);
   const params = useParams();
 
-  // const [countryS, setCountryS] = useState<CountryReq | null>(null);
-
   const {
     data: recievedCountry,
     isLoading,
@@ -38,10 +36,6 @@ export const CountryPage = () => {
   } = useFetch<CountryReq | CountryReq[number]>(
     `https://restcountries.com/v2/${state.param}/${params.countryId}`
   );
-  console.log(recievedCountry);
-  // useEffect(() => {
-  //   setCountryS(recievedCountry);
-  // }, [recievedCountry]);
 
   if (error) {
     return <Text color="red">{error}</Text>;
