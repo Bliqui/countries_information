@@ -7,7 +7,7 @@ Deployed on [Vercel](https://vercel.com/)
 
 In this application, the following tools were used: 
 
-```React```, ```TypeScript```, ```Chakra UI```, ```React Router DOM```, ```React Testing Library```, ```Jest```.
+```React```, ```TypeScript```, ```Chakra UI```, ```React Router DOM```, ```React Testing Library```, ```Jest```, ```Mock Service Worker```.
 
 Also, the following APIs:
 
