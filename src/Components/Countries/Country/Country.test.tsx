@@ -27,6 +27,7 @@ const mockedCountry: CountryProps["country"] = {
   borders: ["BLR", "CZE", "DEU", "LTU", "RUS", "SVK", "UKR"],
   latlng: [52.0, 20.0],
   alpha2Code: "Pl",
+  timezones: ["UTC+01"],
 };
 
 describe("Country Component", () => {

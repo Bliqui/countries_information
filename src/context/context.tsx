@@ -2,9 +2,11 @@ import { createContext, Dispatch, ReactElement, useReducer } from "react";
 import { countriesReducer } from "./countriesReducer";
 import { CountriesActionType, CountriesInitialStateType } from "./types";
 
+export const DEFAULT_PARAM = "name";
+
 const countriesInitialState = {
   countries: [],
-  param: "",
+  param: DEFAULT_PARAM,
 };
 
 export const CountriesContext = createContext<{

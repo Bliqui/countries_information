@@ -1,4 +1,4 @@
-import { Action } from "history";
+import { DEFAULT_PARAM } from "./context";
 import { CountriesInitialStateType } from "./types";
 import { CountriesActionType } from "./types";
 
@@ -10,12 +10,12 @@ export const countriesReducer = (
     case "ADD_COUNTRIES":
       return {
         ...state,
-        countries: action.payload,
+        countries: action.payload || [],
       };
     case "SET_PARAM":
       return {
         ...state,
-        param: action.param,
+        param: action.param || DEFAULT_PARAM,
       };
     default:
       return state;

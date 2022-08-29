@@ -17,7 +17,7 @@ export const Header = () => {
       >
         <Heading size={{ base: "lg", md: "xl" }}>Where in the world?</Heading>
         <HStack>
-          <Timer />
+          {/* <Timer /> */}
           <ColorModeSwitcher justifySelf="flex-end" />
         </HStack>
       </Flex>

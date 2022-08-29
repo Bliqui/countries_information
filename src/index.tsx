@@ -7,6 +7,7 @@ import * as serviceWorker from "./serviceWorker";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CountryPage } from "./Pages/CountryPage";
 import { Header } from "./Components/Header/Header";
+import { AppProvider } from "./context/context";
 
 const container = document.getElementById("root");
 if (!container) throw new Error("Failed to find the root element");
@@ -14,16 +15,18 @@ const root = ReactDOM.createRoot(container);
 
 root.render(
   <React.StrictMode>
-    <ChakraProvider theme={theme}>
-      <BrowserRouter>
-        <Header />
-        <Routes>
-          <Route path="/" element={<App />} />
-          <Route path="country/:countryId" element={<CountryPage />} />
-        </Routes>
-        <ColorModeScript />
-      </BrowserRouter>
-    </ChakraProvider>
+    <AppProvider>
+      <ChakraProvider theme={theme}>
+        <BrowserRouter>
+          <Header />
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="country/:countryId" element={<CountryPage />} />
+          </Routes>
+          <ColorModeScript />
+        </BrowserRouter>
+      </ChakraProvider>
+    </AppProvider>
   </React.StrictMode>
 );
 

@@ -1,11 +1,15 @@
-import { Badge } from "@chakra-ui/react";
-import { ReactNode } from "react";
+import { Badge, Link } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
 
 type BadgeComponentType = {
   countryShort: string;
+  onClick: () => void;
 };
 
-export const BadgeComponent = ({ countryShort }: BadgeComponentType) => {
+export const BadgeComponent = ({
+  countryShort,
+  onClick,
+}: BadgeComponentType) => {
   return (
     <Badge
       mx="5px"
@@ -14,7 +18,13 @@ export const BadgeComponent = ({ countryShort }: BadgeComponentType) => {
       _hover={{ transform: "scale(1.1)" }}
       cursor="default"
     >
-      {countryShort}
+      <Link
+        as={ReactRouterLink}
+        onClick={onClick}
+        to={`/country/${countryShort}`}
+      >
+        {countryShort}
+      </Link>
     </Badge>
   );
 };

@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Country } from "../Components/Countries/Country/Country";
 import { useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
-import { Text, Spinner, Box, Flex } from "@chakra-ui/react";
+import { Text, Spinner, Flex } from "@chakra-ui/react";
 import { CountriesContext } from "../context/context";
 
 type CountryReq = {
@@ -22,20 +22,26 @@ type CountryReq = {
   borders: string[];
   latlng: [number, number];
   alpha2Code: string;
+  timezones: string[];
 }[];
 
 export const CountryPage = () => {
   const { state } = useContext(CountriesContext);
   const params = useParams();
 
-  console.log(state);
+  // const [countryS, setCountryS] = useState<CountryReq | null>(null);
+
   const {
     data: recievedCountry,
     isLoading,
     error,
-  } = useFetch<CountryReq>(
-    `https://restcountries.com/v2/name/${params.countryId}`
+  } = useFetch<CountryReq | CountryReq[number]>(
+    `https://restcountries.com/v2/${state.param}/${params.countryId}`
   );
+  console.log(recievedCountry);
+  // useEffect(() => {
+  //   setCountryS(recievedCountry);
+  // }, [recievedCountry]);
 
   if (error) {
     return <Text color="red">{error}</Text>;
@@ -46,5 +52,11 @@ export const CountryPage = () => {
       </Flex>
     );
   }
-  return recievedCountry ? <Country country={recievedCountry[0]} /> : null;
+  return recievedCountry ? (
+    <Country
+      country={
+        Array.isArray(recievedCountry) ? recievedCountry[0] : recievedCountry
+      }
+    />
+  ) : null;
 };

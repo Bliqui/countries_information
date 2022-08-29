@@ -7,6 +7,6 @@ export type CountriesInitialStateType = {
 
 export type CountriesActionType = {
   type: string;
-  payload: DataType[];
-  param: string;
+  payload?: DataType[];
+  param?: string;
 };

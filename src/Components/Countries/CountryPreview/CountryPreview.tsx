@@ -19,12 +19,6 @@ export const CountryPreview = ({
   region,
   capital,
 }: CountryProps) => {
-  const { state, dispatch } = useContext(CountriesContext);
-
-  const setParams = () => {
-    dispatch({ type: "SET_PARAM", payload: [], param: "alpha" });
-  };
-
   return (
     <VStack
       bgColor="gray.200"
@@ -69,7 +63,6 @@ export const CountryPreview = ({
         navigateTo={`country/${title.toLowerCase()}`}
         boxShadow="0px 0px 4px 0px rgba(66, 68, 90, 1)"
         display="block"
-        onClick={setParams}
       >
         Details
       </LinkAsButtonRouter>

@@ -8,6 +8,7 @@ import {
   Text,
   chakra,
   Flex,
+  SimpleGrid,
 } from "@chakra-ui/react";
 import { ArrowBackIcon } from "@chakra-ui/icons";
 import { Map } from "./Map/Map";
@@ -15,6 +16,9 @@ import { LinkAsButtonRouter } from "../../LinkAsButtonRouter/LinkAsButtonRouter"
 import { CountryDescription } from "./CountryDescription/CountryDescription";
 import { CountryHotTopics } from "./CountryHotTopics/CountryHotTopics";
 import { BadgeComponent } from "./BadgeComponent/BadgeComponent";
+import { Timer } from "../../Header/Timer/Timer";
+import { useContext } from "react";
+import { CountriesContext } from "../../../context/context";
 
 export type CountryProps = {
   country: {
@@ -34,10 +38,17 @@ export type CountryProps = {
     borders: string[];
     latlng: [number, number];
     alpha2Code: string;
+    timezones: string[];
   };
 };
 
 export const Country = ({ country }: CountryProps) => {
+  const { dispatch } = useContext(CountriesContext);
+
+  const onSetNameParam = () => {
+    dispatch({ type: "SET_PARAM", param: "alpha" });
+  };
+
   return (
     <Box _dark={{ bgColor: "gray.700" }} bgColor="gray.200" py="30px">
       <Box maxW={{ base: "90%", md: "1100px" }} mx="auto">
@@ -125,6 +136,17 @@ export const Country = ({ country }: CountryProps) => {
                     </chakra.span>
                   ))}
                 </Text>
+                <Flex flexWrap="wrap" flexDir="column">
+                  <Text fontWeight="600">Current time: </Text>
+                  <SimpleGrid
+                    gridTemplateColumns="repeat(2, 1fr)"
+                    spacing="5px"
+                  >
+                    {country.timezones.map((timeZone) => {
+                      return <Timer key={timeZone} timeZone={timeZone} />;
+                    })}
+                  </SimpleGrid>
+                </Flex>
               </VStack>
             </HStack>
             <Text mt="40px">
@@ -132,7 +154,11 @@ export const Country = ({ country }: CountryProps) => {
               {country.borders ? (
                 country.borders.map((country) => {
                   return (
-                    <BadgeComponent key={country} countryShort={country} />
+                    <BadgeComponent
+                      onClick={onSetNameParam}
+                      key={country}
+                      countryShort={country}
+                    />
                   );
                 })
               ) : (
