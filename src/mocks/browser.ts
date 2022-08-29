@@ -29,7 +29,7 @@ type CountryPageDataType = {
   };
 };
 
-const handlers = [
+export const server = setupServer(
   rest.get<AllCountriesDataType>(
     "https://restcountries.com/v3.1/all",
     (req, res, ctx) => {
@@ -53,7 +53,30 @@ const handlers = [
       );
     }
   ),
-];
-
-export const server = setupServer();
+  rest.get<AllCountriesDataType>(
+    `https://newsapi.org/v2/top-headlines?country=RUS`,
+    (req, res, ctx) => {
+      return res(
+        ctx.json({
+          articles: [
+            {
+              author: "Petya",
+              title: "Shock content",
+              description: "Shock content happened",
+              url: "some url",
+              publishedAt: "2022-08-29T08:00:28Z",
+            },
+            {
+              author: "Vasya",
+              title: "extra Shock content",
+              description: "Shock content happened twice",
+              url: "some url2",
+              publishedAt: "2022-09-29T08:00:28Z",
+            },
+          ],
+        })
+      );
+    }
+  )
+);
 // Describe the requests to mock.

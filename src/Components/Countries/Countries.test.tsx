@@ -42,4 +42,16 @@ describe("Countries component", () => {
 
     expect(screen.getByText("No countries found")).toBeInTheDocument();
   });
+
+  it("matches snapshot", async () => {
+    const output = customRender(
+      <Countries searchResult="Poland" selectedOption="Europe" />
+    );
+    expect(await screen.findByTestId("spinner")).toBeInTheDocument();
+    await waitForElementToBeRemoved(() => screen.queryByTestId("spinner"));
+
+    expect(await screen.findByText(/Poland/)).toBeInTheDocument();
+
+    expect(output).toMatchSnapshot();
+  });
 });

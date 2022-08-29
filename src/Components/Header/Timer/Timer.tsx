@@ -26,7 +26,7 @@ export const Timer = ({ timeZone }: { timeZone: string }) => {
           timeStyle: "short",
         })
       );
-    }, 60000);
+    }, 30000);
 
     return () => {
       clearInterval(timer);

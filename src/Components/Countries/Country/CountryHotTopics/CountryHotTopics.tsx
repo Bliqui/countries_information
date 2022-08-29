@@ -57,7 +57,7 @@ export const CountryHotTopics = ({
         gridTemplateColumns="repeat(auto-fit, minmax(300px , 1fr));"
         spacing="30px"
       >
-        {isLoading && <Spinner />}
+        {isLoading && <Spinner data-testid="spinner" />}
         {receivedTopics?.articles ? (
           cutData?.map((article) => {
             return (
