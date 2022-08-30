@@ -31,7 +31,9 @@ export const Main = () => {
           <TextInputWithSearchIcon
             placeholder="Search for country..."
             width="25rem"
-            onChange={setInputValue}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setInputValue(e.target.value)
+            }
             value={inputValue}
           />
           <SelectInput

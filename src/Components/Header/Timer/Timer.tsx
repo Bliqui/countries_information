@@ -1,11 +1,10 @@
-import { Box } from "@chakra-ui/react";
+import { chakra } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 export const Timer = ({ timeZone }: { timeZone: string }) => {
   const [time, setTime] = useState("");
 
   const oneHour = 3600000;
-
   let receivedDifference: number;
 
   if (timeZone.slice(4, 6) === "00") {
@@ -14,24 +13,30 @@ export const Timer = ({ timeZone }: { timeZone: string }) => {
     receivedDifference = Number(timeZone.slice(4, 6)) + 1;
   }
 
-  useEffect(() => {
-    const timer = setInterval(() => {
-      let actualTime = timeZone.includes("-")
-        ? Date.now() - oneHour * receivedDifference
-        : Date.now() + oneHour * receivedDifference;
+  const formatTime = () => {
+    let actualTime = timeZone.includes("-")
+      ? Date.now() - oneHour * receivedDifference
+      : Date.now() + oneHour * receivedDifference;
 
-      setTime(
-        new Date(actualTime).toLocaleString("pl-PL", {
-          timeZone: "Africa/Ouagadougou",
-          timeStyle: "short",
-        })
-      );
-    }, 30000);
+    setTime(
+      new Date(actualTime).toLocaleString("us-EN", {
+        timeZone: "Africa/Ouagadougou",
+        timeStyle: "full",
+      })
+    );
+  };
+
+  useEffect(() => {
+    formatTime();
+
+    const timer = setInterval(() => {
+      formatTime();
+    }, 60000);
 
     return () => {
       clearInterval(timer);
     };
   }, []);
 
-  return <Box fontWeight="600">{time}</Box>;
+  return <chakra.span fontWeight="600">{time}</chakra.span>;
 };

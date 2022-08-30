@@ -1,11 +1,12 @@
-import { InputGroup, InputLeftElement, Input, chakra } from "@chakra-ui/react";
+import { InputGroup, InputLeftElement, Input } from "@chakra-ui/react";
 import { SearchIcon } from "@chakra-ui/icons";
+import { ChangeEvent } from "react";
 
 type InputProps = {
   width: string;
   placeholder: string;
   value: string;
-  onChange: (text: string) => void;
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
 };
 
 export const TextInputWithSearchIcon = ({
@@ -23,9 +24,7 @@ export const TextInputWithSearchIcon = ({
       <Input
         w={width}
         value={value}
-        onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-          onChange(e.target.value)
-        }
+        onChange={onChange}
         type="text"
         placeholder={placeholder}
       />
