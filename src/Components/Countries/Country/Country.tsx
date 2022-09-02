@@ -17,10 +17,8 @@ import { CountryDescription } from "./CountryDescription/CountryDescription";
 import { CountryHotTopics } from "./CountryHotTopics/CountryHotTopics";
 import { BadgeComponent } from "./BadgeComponent/BadgeComponent";
 import { Timer } from "../../Header/Timer/Timer";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { CountriesContext } from "../../../context/context";
-import axios from "axios";
-import "./Country.css";
 
 export type CountryProps = {
   country: {
@@ -53,22 +51,6 @@ export const Country = ({ country }: CountryProps) => {
   const onSetNameParam = () => {
     dispatch({ type: "SET_PARAM", param: "name" });
   };
-
-  /*  */
-  const [time, setTime] = useState(new Date());
-  useEffect(() => {
-    setInterval(
-      () =>
-        axios
-          .get("http://worldtimeapi.org/api/timezone/Europe/Moscow")
-          .then((res) => {
-            let time1 = new Date(res.data.datetime);
-            setTime(time1);
-          }),
-      1000
-    );
-  }, []);
-  /*  */
 
   return (
     <Box _dark={{ bgColor: "gray.700" }} bgColor="gray.200" py="30px">
@@ -203,29 +185,6 @@ export const Country = ({ country }: CountryProps) => {
           </Center>
         )}
       </Box>
-
-      <div className="clock">
-        <div className="arrows">
-          <div
-            style={{
-              transform: "rotate(" + (time.getHours() * 30 + 180) + "deg)",
-            }}
-            className="hour"
-          ></div>
-          <div
-            style={{
-              transform: "rotate(" + (time.getMinutes() * 6 + 180) + "deg)",
-            }}
-            className="minute"
-          ></div>
-          <div
-            style={{
-              transform: "rotate(" + (time.getSeconds() * 6 + 180) + "deg)",
-            }}
-            className="second"
-          ></div>
-        </div>
-      </div>
     </Box>
   );
 };
